@@ -1,8 +1,15 @@
-const statusCode = require('http-status-codes')
+const StatusCodes = require('http-status-codes')
+const NotImplemented = require('../errors/notimplemented.error')
 
-function addProblem(req , res){
-   return res.json(statusCode.NOT_IMPLEMENTED);
-   
+function addProblem(req , res , next){
+  try {
+
+    throw new NotImplemented('addProblem');
+    
+  } catch (error) {
+     next(error);
+  }
+
 }
 
 
