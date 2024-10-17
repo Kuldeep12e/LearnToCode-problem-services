@@ -1,5 +1,8 @@
-function addProblem(req , res){
+const statusCode = require('http-status-codes')
 
+function addProblem(req , res){
+   return res.json(statusCode.NOT_IMPLEMENTED);
+   
 }
 
 
