@@ -2,36 +2,25 @@ const StatusCodes = require('http-status-codes')
 const NotImplemented = require('../errors/notimplemented.error')
 
 function addProblem(req , res , next){
-  try {
-
-    throw new NotImplemented('addProblem');
-    
-  } catch (error) {
-     next(error);
-  }
 
 }
 
 
-
-
-function getProblem(req , res){
+function getProblem(req , res , next){
   
 }
 
 
-function getProblems(req , res){
-  return res.json({
-    mgs :"this is a get response"
-  })
+function getProblems(req , res , next){
+ 
 }
 
 
-function deleteProblem(req , res){
+function deleteProblem(req , res , next){
 
 }
 
-function updateProblem(req , res){
+function updateProblem(req , res , next){
 
 
 }
