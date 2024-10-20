@@ -5,6 +5,7 @@ const apiRouter = require('./routes')
 const bodyParser = require('body-parser');
 const BaseError = require('./errors/base.error');
 const errorHandler = require('./utills/errorHandler');
+const connectTODB = require('./config/db.config');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
@@ -21,7 +22,9 @@ app.get('/ping' ,(req , res) =>{
 
 app.use(errorHandler);
 
-app.listen(PORT , () =>{
-    console.log(`server is started at ${PORT}`)
+app.listen(PORT , async() =>{
+    console.log(`server is started at ${PORT}`);
+    await connectTODB();
+    console.log("Successfully connect to DB");
    
 })
