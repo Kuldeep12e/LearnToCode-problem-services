@@ -25,9 +25,16 @@ async function addProblem(req , res , next){
 
 async function getProblem(req , res , next){
   try {
+    const response = await problemService.getProblem(req.params.id)
+    return res.status(StatusCodes.OK).json({
+        success:true,
+        message:"Problem fetched with id",
+        error :{},
+        data : response
+    })
     
   } catch (error) {
-    
+     next(error);
   }
 }
 
