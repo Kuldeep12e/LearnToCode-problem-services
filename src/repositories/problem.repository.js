@@ -15,6 +15,15 @@ class ProblemRepository {
             
 
     }
+
+    async getAllProblems(){
+        try {
+            const problem = await Problem.find({});
+            return problem;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 
